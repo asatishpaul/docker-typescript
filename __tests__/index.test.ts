@@ -8,3 +8,7 @@ describe('GET /', () => {
     expect(response.status).toBe(200);
   });
 });
+/src
+  /__tests__
+    index.test.ts
+  index.ts
