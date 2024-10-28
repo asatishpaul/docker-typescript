@@ -27,5 +27,10 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node"
+  },
+  "jest": {
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "testMatch": ["**/tests/**/*.test.ts"]
   }
 }
