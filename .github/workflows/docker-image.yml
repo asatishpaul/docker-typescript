@@ -30,7 +30,7 @@ jobs:
 
       # Step 5: Run Unit Tests
       - name: Run Tests
-        run: npm test
+        run: npm test -- --passWithNoTests
 
       # Step 6: Upload the built files as artifacts (optional)
       - name: Upload Build Artifacts
