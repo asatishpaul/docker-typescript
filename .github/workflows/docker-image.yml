@@ -74,4 +74,4 @@ jobs:
       # (Optional) Step 5: Deploy to Kubernetes or another cloud platform
       # Example for Kubernetes deployment:
       # - name: Deploy to Kubernetes
-      #   run: kubectl apply -f k8s/deployment.yaml
+      #   run: kubectl apply -f k8s/deployment.yaml 
