@@ -53,6 +53,8 @@ jobs:
       # Step 1: Checkout the code (necessary for deployments)
       - name: Checkout Code
         uses: actions/checkout@v2
+        with:
+          node-version: '16'
 
       # Step 2: Log in to DockerHub (if deploying with Docker)
       - name: Log in to DockerHub
