@@ -1,26 +1,36 @@
-FROM node:16-alpine as development
+# Development stage
+FROM node:16-alpine AS development
 
 WORKDIR /usr/src/app
 
-COPY package*.json .
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
+# Install all dependencies
 RUN npm install
 
+# Copy the rest of the application code
 COPY . .
 
+# Build the application
 RUN npm run build
 
-FROM node:16-alpine as production
-
-ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
+# Production stage
+FROM node:16-alpine AS production
 
 WORKDIR /usr/src/app
 
-COPY package*.json .
+# Copy only the package.json and package-lock.json
+COPY package*.json ./
 
+# Install only production dependencies
 RUN npm ci --only=production
 
+# Copy built application from development stage
 COPY --from=development /usr/src/app/dist ./dist
 
-CMD ["node", "dist/index.js"]
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Command to run the app
+CMD ["node", "dist/index.js"]  # Adjust this according to your entry file
