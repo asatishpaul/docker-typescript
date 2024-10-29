@@ -1,4 +1,4 @@
-# Development stage
+# Development stage 
 FROM node:16-alpine AS development
 WORKDIR /usr/src/app
 
