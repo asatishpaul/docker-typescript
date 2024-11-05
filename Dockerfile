@@ -5,8 +5,8 @@ WORKDIR /usr/src/app
 # Copy both package.json and package-lock.json (if available)
 COPY package*.json ./
 
-# Install all dependencies (including devDependencies)
-RUN npm install
+# Install all dependencies, including devDependencies
+RUN npm install --only=development
 
 # Copy the rest of the project files
 COPY . .
