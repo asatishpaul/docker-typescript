@@ -28,4 +28,4 @@ RUN npm ci --omit=dev
 COPY --from=development /usr/src/app/dist ./dist
 
 # Start the application (if you're using a specific start script)
-CMD ["node", "dist/server.js"] 
+CMD ["node", "dist/server.js"]
