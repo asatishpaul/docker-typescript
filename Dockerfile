@@ -1,19 +1,17 @@
-# Use base image
 FROM node:16-alpine
 
-# Set working directory
 WORKDIR /usr/src/app
 
-# Copy package files
+# Copy both package.json and package-lock.json (if available)
 COPY package*.json ./
 
-# Install dependencies
+# Install all dependencies (including devDependencies)
 RUN npm install
 
-# Copy the rest of your app's source code
+# Copy the rest of the project files
 COPY . .
 
-# Build the app for production (if needed)
+# Build the app
 RUN npm run build
 
 # Start the app
