@@ -9,7 +9,7 @@ COPY package*.json ./
 RUN npm install --only=development
 
 # Copy the rest of the project files
-COPY . .
+COPY . . 
 
 # Build the app
 RUN npm run build
