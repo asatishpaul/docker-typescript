@@ -14,11 +14,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      # Step 2: Set up Node.js (LTS version)
+      # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Adjust this if needed for your project
+          node-version: '16'
 
       # Step 3: Install Dependencies
       - name: Install Dependencies
@@ -53,8 +53,6 @@ jobs:
       # Step 1: Checkout the code (necessary for deployments)
       - name: Checkout Code
         uses: actions/checkout@v2
-        with:
-          node-version: '16'
 
       # Step 2: Log in to DockerHub (if deploying with Docker)
       - name: Log in to DockerHub
@@ -69,7 +67,7 @@ jobs:
 
       # Step 4: Push Docker Image to DockerHub
       - name: Push Docker Image
-        run: docker push asatishpaul/typescriptapp:latest 
+        run: docker push asatishpaul/typescriptapp:latest
 
       # (Optional) Step 5: Deploy to Kubernetes or another cloud platform
       # Example for Kubernetes deployment:
