@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "outDir": "./dist",
     "module": "commonjs",
+    "target": "es6",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "rootDir": "./"  // Change this to the root folder containing both src and tests
+    "skipLibCheck": true
   },
-  "include": ["src/**/*", "tests/**/*"],  // Ensure both src and tests are included
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "tests"   # Exclude test files from being compiled in production
+  ]
 }
