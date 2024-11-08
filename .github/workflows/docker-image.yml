@@ -63,7 +63,8 @@ jobs:
 
       # Step 3: Build Docker Image
       - name: Build Docker Image
-        run: docker build --load -t asatishpaul/typescriptapp:latest .
+       # run: docker build --load -t asatishpaul/typescriptapp:latest .
+        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/docker-image
 
       # Step 4: Push Docker Image to DockerHub
       - name: Push Docker Image
